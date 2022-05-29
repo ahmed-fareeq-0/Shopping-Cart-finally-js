@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Register</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MUO</div>
+
+        <ul class="nav-links">
+          <div class="menu">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </div>
+        </ul>
+
+    </nav>
+
+    <form>
+      <div class="container">
+        <h1 class="register-name">Register</h1>
+        <p class="register-p">Please fill in this form to create an account.</p>
+        
+        <input type="text" placeholder="Name" id="register-input-userName">
+        <input type="text" placeholder="Enter Email" id="register-input-email">
+        <input type="password" placeholder="Enter password" id="register-input-psd">
+        <input type="password" placeholder="Repeat Password" id="register-input-psd2">
+        <hr>
+
+        <button type="submit" class="registerbtn" id="registr-btn">Register</button>
+      </div>
+    
+      <div class="container signin">
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+      </div>
+    </form>
+
+    <script src="js/register.js"></script>
+</body>
+</html>
