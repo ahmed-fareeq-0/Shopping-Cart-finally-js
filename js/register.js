@@ -5,7 +5,6 @@ const reg_psd = document.querySelector("#register-input-psd");
 const reg_psd2 = document.querySelector("#register-input-psd2");
 const reg_btn = document.querySelector("#registr-btn");
 
-
 reg_btn.addEventListener("click", (e) => {
     e.preventDefault()
 

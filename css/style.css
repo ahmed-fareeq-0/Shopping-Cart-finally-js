@@ -101,3 +101,11 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+
+#user_info {
+  display: none;
+}
+
+a{
+  color: white;
+}
