@@ -106,6 +106,10 @@ a {
   display: none;
 }
 
+#user_info > li {
+  margin: 10px;
+}
+
 a{
   color: white;
 }
