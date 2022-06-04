@@ -1,0 +1,64 @@
+/* card */
+
+.products {
+    margin: 5px 0 0 20px;
+  }
+  
+  .card {
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(30, 29, 29, 0.305);
+    transition: 0.3s;
+    margin: 10px;
+    
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  
+  .info {
+    text-align: center;
+  }
+  
+  .info > h4 {
+  
+  }
+  
+  .container {
+    padding: 2px 16px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    
+  }
+  
+  
+  .btnAddToCart {
+    border: none;
+    padding: 5px 10px;
+    background-color: #54c1c1;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .btnAddToCart:hover{
+    background-color: rgb(88, 201, 201);
+  }
+  
+  .btnLike {
+    border: none;
+    padding: 5px 10px;
+    background-color: #eb0a0a;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: wheat;
+  }
+  
+  .btnLike:hover{
+    background-color: #cc0b0b;
+  }
+  
