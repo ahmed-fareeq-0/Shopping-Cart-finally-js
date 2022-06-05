@@ -68,7 +68,8 @@ ShowProducts()
 // add product name to cart hamburger 
 let CartProduct = document.querySelector(".cartProduct");
 let noProd = document.querySelector(".noProd");
-let Badge = document.querySelector(".badge");
+var Badge = document.querySelector(".badge");
+
 
 function addToCart(id) {
     let choosenItem = products.find((item) => item.id === id);
@@ -80,10 +81,16 @@ function addToCart(id) {
 }
 
 // show hamburger
+var BtnCart = document.querySelector(".btnCart")
 var CartHamburger = document.querySelector("#cartHamburger");
 
 function ShowHamburger() {
-    CartHamburger.style.display = "block";
+    if(CartHamburger.style.display == "block"){
+        CartHamburger.style.display = "none"
+    }else{
+        CartHamburger.style.display = "block"
+    }
+    
 }
 
 
