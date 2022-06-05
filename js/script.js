@@ -1,18 +1,18 @@
+// import Variables
 var reg_log_nav = document.querySelector(".nav-links");
 var userDom = document.querySelector("#userDom");
 var user_info = document.querySelector("#user_info");
-
 let getUserName = localStorage.getItem("userName");
 
-if(getUserName) {
-    reg_log_nav.remove()
-    user_info.style.display = "flex"
-    userDom.innerHTML = getUserName
+// Verify username and add name in Navbar
+if (getUserName) {
+    reg_log_nav.remove();
+    user_info.style.display = "flex";
+    userDom.innerHTML = getUserName;
 }
 
 
-// data 
-
+// products data
 const products = [
     {
         id: 1,
@@ -42,37 +42,50 @@ const products = [
 
 
 // show products
-
 var DomProducts = document.querySelector("#DomProducts")
 
-function ShowProducts () {
-    let ProducUi = products.map( (item) => {
-
+function ShowProducts() {
+    let ProducUi = products.map((item) => {
         return `
-        <div class="card">
-        <img src="${item.img}" style="width:100%">
-        <div class="info">
-            <h4>${item.name}</h4>
-            <p>${item.desc}</p>
-        </div>
-        <div class="container">
-          <button class="btnAddToCart" onClick="addToCart(${item.id})">Add to cart</button>
-          <button class="btnLike">like</button>
-        </div>
-      </div>
-        `
-    })
-
+            <div class="card">
+                <img src="${item.img}" style="width:100%">
+                <div class="info">
+                    <h4>${item.name}</h4>
+                    <p>${item.desc}</p>
+                </div>
+                <div class="container">
+                <button class="btnAddToCart" onClick="addToCart(${item.id})">Add to cart</button>
+                <button class="btnLike">like</button>
+                </div>
+            </div>
+            `
+    });
     DomProducts.innerHTML = ProducUi;
 }
 ShowProducts()
 
 
+// add product name to cart hamburger 
+let CartProduct = document.querySelector(".cartProduct");
+let noProd = document.querySelector(".noProd");
+let Badge = document.querySelector(".badge");
 
-function addToCart (id) {
-    let choosenItem = products.find((item) => item.id === id)
-    console.log(choosenItem);
-} 
+function addToCart(id) {
+    let choosenItem = products.find((item) => item.id === id);
+    noProd.remove();
+    CartProduct.innerHTML += `<p>${choosenItem.name}</p>`;
+    let CartProductItems = document.querySelectorAll(".cartProduct p");
+    Badge.innerHTML = CartProductItems.length;
+    CartHamburger.style.display = "block";
+}
+
+// show hamburger
+var CartHamburger = document.querySelector("#cartHamburger");
+
+function ShowHamburger() {
+    CartHamburger.style.display = "block";
+}
+
 
 
 // function checkLogedUser () {

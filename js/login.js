@@ -3,7 +3,7 @@ const login_userName = document.querySelector("#login-input-userName");
 const login_psd = document.querySelector("#login-input-psd");
 const login_btn = document.querySelector("#login-btn");
 
-
+// sign in 
 login_btn.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -11,17 +11,15 @@ login_btn.addEventListener("click", (e) => {
     let getpsd = localStorage.getItem("psd");
 
     if (login_userName.value === "" || login_psd.value === "") {
-        alert("please full data")
+        alert("please full data");
 
     } else {
-        if ((getUser && getUser.trim() === login_userName.value) && (getpsd && getpsd === login_psd.value)) {
+            if ((getUser && getUser.trim() === login_userName.value) && (getpsd && getpsd === login_psd.value)) {
 
-            setTimeout(() => { window.location = "index.html" }, 1500)
+                setTimeout(() => { window.location = "index.html" }, 1500);
 
-        } else { alert("There is no account with this name") }
+            } else { alert("There is no account with this name") }
     }
-
-
 })
 
 

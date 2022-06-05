@@ -1,0 +1,25 @@
+.hamburger{
+    position: relative;
+}
+
+.hamburger > div {
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 40px 10px 50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: none;
+}
+
+.hamburger  .cartProduct  p {
+    margin-bottom: 5px;
+}
+
+.hamburger > div > span {
+    padding: 2px 5px;
+    background-color: rgb(48, 192, 144);
+    cursor: pointer;
+    font-weight: 500;
+    color: #000;
+}

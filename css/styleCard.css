@@ -61,4 +61,7 @@
   .btnLike:hover{
     background-color: #cc0b0b;
   }
-  
+
+  .badge{
+    color: #cc0b0b;
+  }
