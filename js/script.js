@@ -1,16 +1,3 @@
-// import Variables
-var reg_log_nav = document.querySelector(".nav-links");
-var userDom = document.querySelector("#userDom");
-var user_info = document.querySelector("#user_info");
-let getUserName = localStorage.getItem("userName");
-
-// Verify username and add name in Navbar
-if (getUserName) {
-    reg_log_nav.remove();
-    user_info.style.display = "flex";
-    userDom.innerHTML = getUserName;
-}
-
 
 // products data
 const products = [
@@ -67,17 +54,35 @@ ShowProducts()
 
 // add product name to cart hamburger 
 let CartProduct = document.querySelector(".cartProduct");
-let noProd = document.querySelector(".noProd");
 var Badge = document.querySelector(".badge");
 
 
+let addedItem = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
+
+if(addedItem){
+    addedItem.map((item) => {
+        CartProduct.innerHTML += `<p>${item.name}</p>` ;
+    })
+
+    Badge.innerHTML = addedItem.length;
+}
+
+
 function addToCart(id) {
-    let choosenItem = products.find((item) => item.id === id);
-    noProd.remove();
-    CartProduct.innerHTML += `<p>${choosenItem.name}</p>`;
-    let CartProductItems = document.querySelectorAll(".cartProduct p");
-    Badge.innerHTML = CartProductItems.length;
-    CartHamburger.style.display = "block";
+        if(localStorage.getItem("userName")){
+
+            let choosenItem = products.find((item) => item.id === id);
+            CartProduct.innerHTML += `<p>${choosenItem.name}</p>`;
+            let CartProductItems = document.querySelectorAll(".cartProduct p");
+            Badge.innerHTML = CartProductItems.length;
+            CartHamburger.style.display = "block";
+        
+           addedItem = [...addedItem, choosenItem];
+           localStorage.setItem("products", JSON.stringify(addedItem))
+
+     }else {
+         window.location = "login.html"
+     }
 }
 
 // show hamburger
@@ -96,10 +101,6 @@ function ShowHamburger() {
 
 
 // function checkLogedUser () {
-//     if(localStorage.getItem("userName")){
-//         console.log("add to cart");
-//     }else {
-//         window.location = "login.html"
-//     }
+
 // }
 
