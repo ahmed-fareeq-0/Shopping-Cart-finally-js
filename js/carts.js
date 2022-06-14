@@ -19,7 +19,7 @@ function DrawproductsUi(products) {
                     <p>${item.desc}</p>
                 </div>
                 <div class="container">
-                <button class="btnAddToCart" onClick="removefromcart(${item.id})">remove</button>
+                <button class="btnAddToCart" onClick="Removefromcart(${item.id})" >remove</button>
                 <button class="btnLike">like</button>
                 </div>
             </div>
@@ -27,3 +27,15 @@ function DrawproductsUi(products) {
     });
     DomCartProducts.innerHTML = CartProducUi ;
 }
+
+
+// remove product in cart
+function Removefromcart (id) {
+    if (getProduct) {
+        let items = JSON.parse(getProduct);
+        let filteredItems = items.filter((item) => item.id !== id);
+        localStorage.setItem("products", JSON.stringify(filteredItems));
+        DrawproductsUi(filteredItems)
+    }
+}
+

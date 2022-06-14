@@ -59,6 +59,7 @@ var Badge = document.querySelector(".badge");
 
 let addedItem = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
 
+
 if(addedItem){
     addedItem.map((item) => {
         CartProduct.innerHTML += `<p>${item.name}</p>` ;
@@ -98,9 +99,4 @@ function ShowHamburger() {
     
 }
 
-
-
-// function checkLogedUser () {
-
-// }
 
