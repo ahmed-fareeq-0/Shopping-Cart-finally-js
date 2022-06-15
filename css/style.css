@@ -114,4 +114,6 @@ a{
   color: white;
 }
 
-
+#noProductInCart {
+text-align: center;
+}
