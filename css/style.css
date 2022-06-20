@@ -117,3 +117,14 @@ a{
 #noProductInCart {
 text-align: center;
 }
+
+
+.item-details  {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.info-details p {
+  margin: 10px 0;
+}

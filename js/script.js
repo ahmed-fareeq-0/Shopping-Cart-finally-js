@@ -26,6 +26,7 @@ const products = [
         img: "image/galaxe.jpg"
     },
 ]
+localStorage.setItem("productsItem", JSON.stringify(products))
 
 
 // show products
@@ -37,7 +38,7 @@ function ShowProducts() {
             <div class="card">
                 <img src="${item.img}" style="width:100%">
                 <div class="info">
-                    <h4>${item.name}</h4>
+                <span onClick="saveItemData(${item.id})">${item.name}</span>
                     <p>${item.desc}</p>
                 </div>
                 <div class="container">
@@ -100,3 +101,8 @@ function ShowHamburger() {
 }
 
 
+// save id in local storge with name cartProductDetails
+function saveItemData(id) {
+    localStorage.setItem("ProductId", id);
+    window.location = "cartProductDetails.html"
+}

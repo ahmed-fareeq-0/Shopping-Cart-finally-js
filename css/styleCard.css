@@ -21,8 +21,10 @@
     text-align: center;
   }
   
-  .info > h4 {
-  
+  .info > span {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
   }
   
   .container {
