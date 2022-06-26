@@ -96,8 +96,7 @@ function ShowHamburger() {
         CartHamburger.style.display = "none"
     }else{
         CartHamburger.style.display = "block"
-    }
-    
+    }  
 }
 
 
@@ -106,3 +105,38 @@ function saveItemData(id) {
     localStorage.setItem("ProductId", id);
     window.location = "cartProductDetails.html"
 }
+
+
+// search 
+let searchInput = document.getElementById("searchInput")
+
+searchInput.addEventListener("keyup", (e) => {
+    if(e.keyCode === 13){
+        Search(e.target.value, JSON.parse(localStorage.getItem("productsItem")))
+    }
+})
+
+
+
+function Search(title, myArray) {
+    let arr = myArray.filter((item) => item.name === title)
+
+     let ProducUi = arr.map((item) => {
+         return `
+             <div class="card">
+                 <img src="${item.img}" style="width:100%">
+                 <div class="info">
+                 <span onClick="saveItemData(${item.id})">${item.name}</span>
+                     <p>${item.desc}</p>
+                 </div>
+                 <div class="container">
+                 <button class="btnAddToCart" onClick="addToCart(${item.id})">Add to cart</button>
+                 <button class="btnLike">like</button>
+                 </div>
+             </div>
+             `
+     });
+     DomProducts.innerHTML = ProducUi;
+}
+
+

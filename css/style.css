@@ -128,3 +128,14 @@ align-items: center;
 .info-details p {
   margin: 10px 0;
 }
+
+
+#searchInput{
+  width:50%;
+  margin: 10px;
+  height: 40px;
+  padding: 0 0 0 10px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 18px;
+}
